@@ -4,32 +4,24 @@ The files included in this first release allow you to create a javascript enhanc
 
 To use these files you'll need to copy them to the rdoc folder in the directory for your local ruby install.
 
-I only have tested this on a mac so the instructions are mac specific for now.
+git clone git://github.com/tiendung/ajax-rdoc.git
 
-Your local rdoc (and ruby install) should be here... or something similar
-/usr/local/lib/ruby/1.8/rdoc
+sudo cp ajax-rdoc/rdoc/generators/ajax_generator.rb /usr/local/lib/ruby/1.8/rdoc/generators
 
-1) Unzip the jaxdoc package
-2) Open the terminal (command line) and switch to the new jaxdoc dir that was created when you unzipped the package
-3) copy the file 'ajax_generator.rb' to the 'generators' directory in your rdoc folder
-  >sudo cp ajax_generator.rb /usr/local/lib/ruby/1.8/rdoc/generators
+sudo cp -R ajax-rdoc/rdoc/generators/template/ajax /usr/local/lib/ruby/1.8/rdoc/generators/template
 
-4) copy the template files (and directory) over to the template directory inside the generators directory
-  >sudo cp -R ajax /usr/local/lib/ruby/1.8/rdoc/generators/template
-
-5) Switch over to the directory where you want to run this rdoc template and use the -fmt command to run the this template
-  >rdoc --fmt ajax
-
-6) This should start the generator and you'll have your new rdoc template in no-time! It should be in a folder called "doc"
-
-Should you have any problems (or questions) feel free to contact me at blchamberlain+rb@gmail.com
-
-Thanks!
--Brian
-
-Alternatively you can set this env var and run the documentation generator from anyware (ie your home dir)
-
-export RUBYLIB=~/brain/rails/src/jaxdoc_0.0.1 (for example)
+Switch over to the directory where you want to run this rdoc template
+rdoc --fmt ajax
 
 
+Some shortcuts
 
+alias jaxdoc="rdoc --fmt ajax --exclude .*generator.* --exclude .*test.* --exclude .*spec.*"
+
+alias railsdoc="cd ~/src/rails && jaxdoc --op ~/doc/rails actionmailer activerecord actionpack activemodel activesupport activeresource railties && cd doc/ && sed s/_Ruby_/Rails/                    <index.html> index_.html && mv index_.html index.html"
+
+
+References
+
+http://github.com/breakpointer/ajax-rdoc/tree/master/README
+http://ananasblau.com/2007/12/16/jaxdoc-ruby-on-rails-docs-on-ajax

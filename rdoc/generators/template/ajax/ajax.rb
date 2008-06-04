@@ -695,10 +695,10 @@ INDEX = <<HTML
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="description" content="A nifty way to interact with the Ruby on Rails API" />
+    <meta name="description" content="A nifty way to interact with the Ruby API" />
  	<meta name="author" content="created by Brian Chamberlain. You can contact me using 'blchamberlain' on the gmail." />
-	<meta name="keywords" content="rails, ruby, ruby on rails, ROR, purple, monkey, dishwasher" />
-	<title>Rails API with the AJAX flavor</title>
+	<meta name="keywords" content="ruby, doc" />
+	<title>_Ruby_ API</title>
 	<link rel="stylesheet" href="rdoc-style.css" type="text/css" media="screen" />    
 	<script type="text/javascript" src="prototype.js" ></script>
 	<script type="text/javascript" src="api_grease.js" ></script>
@@ -721,13 +721,13 @@ INDEX = <<HTML
 	</div>	
 </div>
 <div id="browserBar">
-	&nbsp;&nbsp;&nbsp;<span id="browserBarInfo">RubyOnRails README</span>
+	&nbsp;&nbsp;&nbsp;<span id="browserBarInfo">README</span>
 </div>
 <div id="rdocContent">
 &nbsp;
 </div>
 <div id="floater">
-<strong>Ruby documentation </strong><a href="#" onmouseover="$('tips').show();" onmouseout="$('tips').hide();">usage tips</a>
+<strong>_Ruby_ </strong><a href="#" onmouseover="$('tips').show();" onmouseout="$('tips').hide();">usage tips</a>
 <div id="tips" style="position:absolute;width:350px;top:15px;right:20px;padding:5px;border:1px solid #333;background-color:#fafafa;display:none;">
 	<p><strong>Some tips</strong> 
 		<ul>
@@ -903,7 +903,7 @@ function suppressPostbacks(){
 function loadDefaults(){
 	var t = getTabs();
 	setActiveTabAndLoadContent(t[0]); //default loading of the first tab
-	loadContent('README_rb.html', "");	
+	loadContent('files/README_rb.html', "");	
 }
 
 function resizeDivs(){
