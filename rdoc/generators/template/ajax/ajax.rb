@@ -1,6 +1,19 @@
 module RDoc
 module Page
 
+def self.title 
+  # Get full path of running rdoc dir
+  pwd = File.expand_path($LOAD_PATH.last)
+
+  # Name of the running rdoc dir
+  str = pwd.split("/").last
+
+  # " -_ aa _- bb _- cc -_" => "Aa Bb Cc"
+  str.gsub!(/[-_]/," ")
+  str.strip!
+  str.split(/ +/).map { |e| e.capitalize }.join(" ")
+end
+
 STYLE = <<CSS
 
 html, body{
@@ -698,7 +711,7 @@ INDEX = <<HTML
     <meta name="description" content="A nifty way to interact with the Ruby API" />
  	<meta name="author" content="created by Brian Chamberlain. You can contact me using 'blchamberlain' on the gmail." />
 	<meta name="keywords" content="ruby, doc" />
-	<title>_Ruby_ API</title>
+	<title>#{title} API</title>
 	<link rel="stylesheet" href="rdoc-style.css" type="text/css" media="screen" />    
 	<script type="text/javascript" src="prototype.js" ></script>
 	<script type="text/javascript" src="api_grease.js" ></script>
@@ -727,7 +740,7 @@ INDEX = <<HTML
 &nbsp;
 </div>
 <div id="floater">
-<strong>_Ruby_ </strong><a href="#" onmouseover="$('tips').show();" onmouseout="$('tips').hide();">usage tips</a>
+<strong>#{title} </strong><a href="#" onmouseover="$('tips').show();" onmouseout="$('tips').hide();">usage tips</a>
 <div id="tips" style="position:absolute;width:350px;top:15px;right:20px;padding:5px;border:1px solid #333;background-color:#fafafa;display:none;">
 	<p><strong>Some tips</strong> 
 		<ul>
