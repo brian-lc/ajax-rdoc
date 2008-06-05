@@ -13,12 +13,13 @@ sudo cp -R ajax-rdoc/rdoc/generators/template/ajax /usr/local/lib/ruby/1.8/rdoc/
 Switch over to the directory where you want to run this rdoc template
 rdoc --fmt ajax
 
+NOTE: The title is set to the dir name that running rdoc command.
 
 Some shortcuts
 
 alias jaxdoc="rdoc --fmt ajax --exclude .*generator.* --exclude .*test.* --exclude .*spec.*"
 
-alias railsdoc="cd ~/src/rails && jaxdoc --op ~/doc/rails actionmailer activerecord actionpack activemodel activesupport activeresource railties && cd doc/ && sed s/_Ruby_/Rails/                    <index.html> index_.html && mv index_.html index.html"
+alias railsdoc="cd ~/src/rails && jaxdoc --op ~/doc/rails actionmailer activerecord actionpack activemodel activesupport activeresource railties"
 
 
 References
