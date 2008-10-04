@@ -647,7 +647,7 @@ HTML
 
 #### This is not used but kept for historical purposes
 ########################## Source code ########################## 
-# Separate page onlye
+# Separate page only
 
 SRC_PAGE = <<HTML
 <html>

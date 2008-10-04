@@ -33,7 +33,7 @@ http://github.com/breakpointer/ajax-rdoc/tree/master/README
 Thanks!
 -Brian
 
-Alternatively you can set this env var and run the documentation generator from anyware (ie your home dir)
+Alternatively you can set this env var and run the documentation generator from anywhere (ie your home dir)
 
-export RUBYLIB=~/brain/rails/src/jaxdoc_0.0.1 (for example)
+export RUBYLIB=~/Usersbrian/rails/src/ajax-rdoc (for example)
 
