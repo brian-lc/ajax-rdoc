@@ -185,7 +185,7 @@ ul#groupType li.activeLi{
 }
 
 #listScroller ul{
-	width: 500px;
+	width: 600px;
 	padding:0px;
 	margin:0px;
 	list-style: none;
@@ -195,7 +195,7 @@ ul#groupType li.activeLi{
 	padding: 0px;
 	margin: 0px;
 	display: block;
-	line-height: 1em;
+	line-height: 1.1em;
 }
 
 #listScroller a{
@@ -431,9 +431,6 @@ CLASS_PAGE = <<HTML
   In:
 START:infiles
 <a href="#" onclick="jsHref('%full_path_url%');">%full_path%</a>
-IF:cvsurl
-&nbsp;(<a href="#" onclick="jsHref('%cvsurl%');">CVS</a>)
-ENDIF:cvsurl
 END:infiles
 
 IF:parent
@@ -600,8 +597,6 @@ END:sections
 HTML
 
 
-
-
 BODY = <<ENDBODY
   !INCLUDE! <!-- banner header -->
 
@@ -630,11 +625,7 @@ FILE_PAGE = <<HTML
     <table class="header-table">
     <tr class="top-aligned-row">
       <td><strong>Path:</strong></td>
-      <td>%full_path%
-IF:cvsurl
-        &nbsp;(<a href="%cvsurl%"><acronym title="Concurrent Versioning System">CVS</acronym></a>)
-ENDIF:cvsurl
-      </td>
+      <td>%full_path%</td>
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>

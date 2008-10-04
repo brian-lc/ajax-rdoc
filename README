@@ -1,15 +1,10 @@
 README for ajax-rdoc - the javascript enhanced rdoc template
 
-The files included in this first release allow you to create a javascript enhanced rdoc (similar to what is on www.railsbrain.com right now).
+This template creates a javascript enhanced rdoc (similar to what is on http://www.railsbrain.com ).
 
-Switch over to the directory where you want to run this rdoc template
-rdoc --fmt ajax
-
-Some shortcuts
-=======
 == Installation
 
-1) Get the files 
+1) Get the files (pick your flavor)
 		* tarball: http://github.com/breakpointer/ajax-rdoc/tarball/master)
 		* git: git clone git://github.com/breakpointer/ajax-rdoc.git
 		
@@ -24,16 +19,21 @@ Some shortcuts
 
 5) This should start the generator and you'll have your new rdoc template in no-time! It should be in a folder called "doc"
 
-alias jaxdoc="rdoc --fmt ajax --exclude .*generator.* --exclude .*test.* --exclude .*spec.*"
+For a shortcut you might try adding this to your .bash_profile
+>alias ajaxrdoc="rdoc --fmt ajax --exclude .*generator.* --exclude .*test.* --exclude .*spec.*"
 
-References
+Thanks to:
+Tien Dung (http://github.com/tiendung) for a neat title insertion hack. The title of your rails documentation is pulled from the 
+directory name (with some humanizing). For example, standing in this directory /blah/ruby/rails-2.1.0 and running rdoc --fmt ajax
+will create a title "Rails 2.1.0" for the generated documentation pages.
 
-http://github.com/breakpointer/ajax-rdoc/tree/master/README
+John Nunemaker (http://github.com/jnunemaker) for the addition of the installation rake task.
+Also, for the very nice QuickSilver search failover if an exact name match is not found. Very nice indeed!
+
 =======
-Thanks!
 -Brian
 
 Alternatively you can set this env var and run the documentation generator from anywhere (ie your home dir)
 
-export RUBYLIB=~/Usersbrian/rails/src/ajax-rdoc (for example)
+>export RUBYLIB=~/Usersbrian/rails/src/ajax-rdoc (for example)
 
