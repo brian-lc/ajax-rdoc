@@ -1,28 +1,39 @@
-README for jaxdoc - the javascript enhanced rdoc template
+README for ajax-rdoc - the javascript enhanced rdoc template
 
 The files included in this first release allow you to create a javascript enhanced rdoc (similar to what is on www.railsbrain.com right now).
-
-To use these files you'll need to copy them to the rdoc folder in the directory for your local ruby install.
-
-git clone git://github.com/tiendung/ajax-rdoc.git
-
-sudo cp ajax-rdoc/rdoc/generators/ajax_generator.rb /usr/local/lib/ruby/1.8/rdoc/generators
-
-sudo cp -R ajax-rdoc/rdoc/generators/template/ajax /usr/local/lib/ruby/1.8/rdoc/generators/template
 
 Switch over to the directory where you want to run this rdoc template
 rdoc --fmt ajax
 
-NOTE: The title is set to the dir name that running rdoc command.
-
 Some shortcuts
+=======
+== Installation
+
+1) Get the files 
+		* tarball: http://github.com/breakpointer/ajax-rdoc/tarball/master)
+		* git: git clone git://github.com/breakpointer/ajax-rdoc.git
+		
+2) cd into the new ajax-rdoc directory
+
+3) Install the generator and templates into your version of rdoc
+		* RDOC=/usr/local/lib/ruby/1.8/rdoc rake install
+		* If you are using macports ruby you can just rake install
+
+4) Switch over to the directory where you want to run this rdoc template and run the following command
+  	* rdoc --fmt ajax
+
+5) This should start the generator and you'll have your new rdoc template in no-time! It should be in a folder called "doc"
 
 alias jaxdoc="rdoc --fmt ajax --exclude .*generator.* --exclude .*test.* --exclude .*spec.*"
-
-alias railsdoc="cd ~/src/rails && jaxdoc --op ~/doc/rails actionmailer activerecord actionpack activemodel activesupport activeresource railties"
-
 
 References
 
 http://github.com/breakpointer/ajax-rdoc/tree/master/README
-http://ananasblau.com/2007/12/16/jaxdoc-ruby-on-rails-docs-on-ajax
+=======
+Thanks!
+-Brian
+
+Alternatively you can set this env var and run the documentation generator from anyware (ie your home dir)
+
+export RUBYLIB=~/brain/rails/src/jaxdoc_0.0.1 (for example)
+
