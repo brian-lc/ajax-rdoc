@@ -23,12 +23,9 @@ For a shortcut you might try adding this to your .bash_profile
 >alias ajaxrdoc="rdoc --fmt ajax --exclude .*generator.* --exclude .*test.* --exclude .*spec.*"
 
 Thanks to:
-Tien Dung (http://github.com/tiendung) for a neat title insertion hack. The title of your rails documentation is pulled from the 
-directory name (with some humanizing). For example, standing in this directory /blah/ruby/rails-2.1.0 and running rdoc --fmt ajax
-will create a title "Rails 2.1.0" for the generated documentation pages.
+Tien Dung (http://github.com/tiendung) for a neat title insertion hack. The title of your rails documentation is pulled from the directory name (with some humanizing). For example, standing in this directory /blah/ruby/rails-2.1.0 and running 'rdoc --fmt ajax' will create a title "Rails 2.1.0" for the generated documentation pages.
 
-John Nunemaker (http://github.com/jnunemaker) for the addition of the installation rake task.
-Also, for the very nice QuickSilver search failover if an exact name match is not found. Very nice indeed!
+John Nunemaker (http://github.com/jnunemaker) for the addition of the installation rake task. Also, for the very nice QuickSilver search failover if an exact name match is not found. Very nice indeed!
 
 =======
 -Brian
