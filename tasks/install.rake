@@ -32,7 +32,7 @@ def get_rdoc_path
   rdoc_path = ENV['RDOC']
   # if using macports ruby i know where stuff is
   rdoc_path ||= %x[which ruby] =~ /^\/opt/ ? '/opt/local/lib/ruby/1.8/rdoc' : nil
-  raise ArgumentError, "Don't forget: RDOC_PATH=/path/to/lib/ruby/1.8/rdoc rake install" unless rdoc_path
+  raise ArgumentError, "Don't forget: RDOC=/path/to/lib/ruby/1.8/rdoc rake install" unless rdoc_path
   rdoc_path
 end
 

@@ -13,6 +13,7 @@ This template creates a javascript enhanced rdoc (similar to what is on http://w
 3) Install the generator and templates into your version of rdoc
 		* RDOC=/usr/local/lib/ruby/1.8/rdoc rake install
 		* If you are using macports ruby you can just rake install
+		(no need to use 'sudo rake install' sudo will be invoked if needed)
 
 4) Switch over to the directory where you want to run this rdoc template and run the following command
   	* rdoc --fmt ajax
