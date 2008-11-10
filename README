@@ -21,7 +21,7 @@ This template creates a javascript enhanced rdoc (similar to what is on http://w
 5) This should start the generator and you'll have your new rdoc template in no-time! It should be in a folder called "doc"
 
 For a shortcut you might try adding this to your .bash_profile
->alias ajaxrdoc="rdoc --fmt ajax --exclude .*generator.* --exclude .*test.* --exclude .*spec.*"
+>alias ajaxrdoc="rdoc --fmt ajax --exclude .*generator.* --exclude .*test.* --exclude .*spec.* --exclude .*pkg.*"
 
 Thanks to:
 Tien Dung (http://github.com/tiendung) for a neat title insertion hack. The title of your rails documentation is pulled from the directory name (with some humanizing). For example, standing in this directory /blah/ruby/rails-2.1.0 and running 'rdoc --fmt ajax' will create a title "Rails 2.1.0" for the generated documentation pages.
