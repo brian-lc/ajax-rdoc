@@ -1,15 +1,15 @@
 desc 'installs the generator and templates in your current ruby directory'
 task :install do
-  rdoc_path = get_rdoc_path()  
+  rdoc_path = get_rdoc_path()
   generator_path, template_path = get_local_paths()
   generator_install_path, template_install_path = get_install_paths(rdoc_path)
-  
+
   say "Installing ajax generator"
   sudo "cp #{generator_path}/ajax_generator.rb #{generator_install_path}"
-  
+
   say "Installing ajax templates"
   sudo "cp -R #{template_path}/ajax #{template_install_path}"
-  
+
   say "Installed to #{rdoc_path}"
 end
 

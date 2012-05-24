@@ -1,7 +1,7 @@
 module RDoc
 module Page
 
-def self.title 
+def self.title
   # Get full path of running rdoc dir
   pwd = File.expand_path($LOAD_PATH.last)
 
@@ -46,14 +46,14 @@ td, p {
 	width: 350px;
 	background-color: #bbf;
 	border: 1px solid #999;
-	
+
 }
 
 #browserBar{
 	height: 25px;
 	padding:11px 0px 0px 0px;
 	margin:0px;
-	background-color: #d0d0d0;	
+	background-color: #d0d0d0;
 	border-top: 1px solid #999;
 	color: #005;
 }
@@ -116,7 +116,7 @@ td, p {
 	padding: 3px;
 	margin: 0px;
 	line-height: 1em;
-	
+
 }
 
 #blowOutListBox ul li a{
@@ -212,7 +212,7 @@ ul#groupType li.activeLi{
 .activeA {
 	background-color: #ffa;
 	border: 1px solid #ccc;
-	padding: 0px 1px 1px 1px; 
+	padding: 0px 1px 1px 1px;
 }
 
 #listScroller small{
@@ -637,7 +637,7 @@ HTML
 
 
 #### This is not used but kept for historical purposes
-########################## Source code ########################## 
+########################## Source code ##########################
 # Separate page only
 
 SRC_PAGE = <<HTML
@@ -703,7 +703,7 @@ INDEX = <<HTML
  	<meta name="author" content="created by Brian Chamberlain. You can contact me using 'blchamberlain' on the gmail." />
 	<meta name="keywords" content="ruby, doc" />
 	<title>#{title} API</title>
-	<link rel="stylesheet" href="rdoc-style.css" type="text/css" media="screen" />    
+	<link rel="stylesheet" href="rdoc-style.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="prototype.js" ></script>
 	<script type="text/javascript" src="api_grease.js" ></script>
 </head>
@@ -713,7 +713,7 @@ INDEX = <<HTML
 	<li>classes</li>
 	<li>files</li>
 	<li id="loadingStatus" style="display:none;">	loading...</li>
-</ul>	
+</ul>
 <div id="listFrame">
 	<div id="listSearch">
 		<form id="searchForm" method="get" action="#" onsubmit="return false">
@@ -722,7 +722,7 @@ INDEX = <<HTML
 	</div>
 	<div id="listScroller">
 	    Loading via ajax... this could take a sec.
-	</div>	
+	</div>
 </div>
 <div id="browserBar">
 	&nbsp;&nbsp;&nbsp;<span id="browserBarInfo">README</span>
@@ -733,7 +733,7 @@ INDEX = <<HTML
 <div id="floater">
 <strong>#{title} </strong><a href="#" onmouseover="$('tips').show();" onmouseout="$('tips').hide();">usage tips</a>
 <div id="tips" style="position:absolute;width:350px;top:15px;right:20px;padding:5px;border:1px solid #333;background-color:#fafafa;display:none;">
-	<p><strong>Some tips</strong> 
+	<p><strong>Some tips</strong>
 		<ul>
 			<li> Up/Down keys move through the search list</li>
 			<li> Return/enter key loads selected item</li>
@@ -799,7 +799,7 @@ function loadUrlParams(url_param){
 function updateUrlParams(anchor_id, name){
 	//Also setting the page title
 	//window.document.title = name + " method - RailsBrain.com ";
-	
+
 	//updating the window location
 	var current_href = window.location.href;
 	//var m_name = name.replace("?","?");
@@ -812,33 +812,33 @@ function updateUrlParams(anchor_id, name){
 
 //does as it says...
 function hookUpActiveSearch(){
-	
+
 	var s_field = $('searchForm').getInputs('text')[0];
 	//var s_field = document.forms[0].searchText;
 	Event.observe(s_field, 'keydown', function(event) {
 		var el = Event.element(event);
 		var key = event.which || event.keyCode;
-		
+
 		switch (key) {
 			case Event.KEY_RETURN:
 				forceLoadOfContentAnchor(getCurrentAnchor());
 				Event.stop(event);
 			break;
-			
+
 			case Event.KEY_UP:
 				scrollListToElementOffset(getCurrentAnchor(),-1);
 			break;
-			
+
 			case Event.KEY_DOWN:
 				scrollListToElementOffset(getCurrentAnchor(),1);
 			break;
-			
+
 			default:
 			break;
 		}
 
 	});
-	
+
 	Event.observe(s_field, 'keyup', function(event) {
 		var el = Event.element(event);
 		var key = event.which || event.keyCode;
@@ -846,21 +846,21 @@ function hookUpActiveSearch(){
 			case Event.KEY_RETURN:
 				Event.stop(event);
 			break;
-			
+
 			case Event.KEY_UP:
 			break;
-			
+
 			case Event.KEY_DOWN:
 			break;
-			
+
 			default:
 				scrollToName(el.value);
 				setSavedSearch(getCurrentTab(), el.value);
 			break;
 		}
-		
+
 	});
-	
+
 	Event.observe(s_field, 'keypress', function(event){
 		var el = Event.element(event);
 		var key = event.which || event.keyCode;
@@ -868,13 +868,13 @@ function hookUpActiveSearch(){
 			case Event.KEY_RETURN:
 				Event.stop(event);
 			break;
-			
+
 			default:
 			break;
 		}
-		
+
 	});
-	
+
 	//Event.observe(document, 'keypress', function(event){
 	//	var key = event.which || event.keyCode;
 	//	if (key == Event.KEY_TAB){
@@ -885,7 +885,7 @@ function hookUpActiveSearch(){
 }
 
 function hookUpTabs(){
-	
+
 	var tabs = getTabs();
 	for(x=0; x < tabs.length; x++)
 	{
@@ -907,18 +907,18 @@ function suppressPostbacks(){
 function loadDefaults(){
 	var t = getTabs();
 	setActiveTabAndLoadContent(t[0]); //default loading of the first tab
-	loadContent('files/README_rb.html', "");	
+	loadContent('files/README_rb.html', "");
 }
 
 function resizeDivs(){
-	var inner_height = 700; 
+	var inner_height = 700;
 	if (window.innerHeight){
 		inner_height = window.innerHeight; //all browsers except IE use this to determine the space available inside a window. Thank you Microsoft!!
 	}else{
 		if(document.documentElement.clientHeight > 0){ //IE uses this in 'strict' mode
 		inner_height = document.documentElement.clientHeight;
 		}else{
-			inner_height = document.body.clientHeight; //IE uses this in 'quirks' mode 
+			inner_height = document.body.clientHeight; //IE uses this in 'quirks' mode
 		}
 	}
 	$('rdocContent').style.height = (inner_height - 92) + "px";//Thankfully all browsers can agree on how to set the height of a div
@@ -937,7 +937,7 @@ function setActiveTabAndLoadContent(current_tab){
 			scrollToName(getSavedSearch("classes"));
 			setSearchFocus();
 			break;
-		
+
 		case "files":
 			setCurrentTab("files");
 		    loadScrollerContent('fr_file_index.html');
@@ -945,7 +945,7 @@ function setActiveTabAndLoadContent(current_tab){
 			scrollToName(getSavedSearch("files"));
 			setSearchFocus();
 			break;
-			
+
 		case "methods":
 			setCurrentTab("methods");
 			loadScrollerContent('fr_method_index.html');
@@ -953,7 +953,7 @@ function setActiveTabAndLoadContent(current_tab){
 			scrollToName(getSavedSearch("methods"));
 			setSearchFocus();
 			break;
-		
+
 		default:
 			break;
 	}
@@ -1040,28 +1040,28 @@ function getSavedSearch(tab_name){
 
 
 function setListScrollerContent(s){
-	
+
 	$('listScroller').innerHTML = s;
 	QSAddition.buildCache();
 }
 
 function setMainContent(s){
-	
+
 	$('rdocContent').innerHTML = s;
 }
 
 function setSearchFieldValue(s){
-	
+
 	document.forms[0].searchText.value = s;
 }
 
 function getSearchFieldValue(){
-	
+
 	return Form.Element.getValue('searchText');
 }
 
 function setSearchFocus(){
-	
+
 	document.forms[0].searchText.focus();
 }
 
@@ -1098,7 +1098,7 @@ function loadScrollerContent(url){
 //called primarily from the links inside the scroller list
 //loads the main page div then jumps to the anchor/element with id
 function loadContent(url, anchor_id){
-	
+
 	var mainHtml = new Ajax.Request(url, {
 	 method: 'get',
 	  onLoading: changeLoadingStatus("on"),
@@ -1159,7 +1159,7 @@ function forceLoadOfContent(index_to_load){
 }
 
 function forceLoadOfContentAnchor(anchor_id){
-	
+
 	var load_element = $(anchor_id);
 	if (load_element != null){
 		var el_text = load_element.innerHTML.strip();
@@ -1214,12 +1214,12 @@ function scrollToName(searcher_name){
 
 	var scroller = $('listScroller');
 	var a_array = scroller.getElementsByTagName('a');
-	
+
 	if (!searcher_name.match(new RegExp(/\s+/))){ //if searcher name is blank
-		
+
 		//var searcher_pattern = new RegExp("^"+searcher_name, "i"); //the "i" is for case INsensitive
 		var searcher_pattern = new RegExp("^"+RegExp.escape(searcher_name.escapeHTML()), "i"); //the "i" is for case INsensitive
-    
+
 		var found_index = -1;
 
 		var found = false;
@@ -1248,7 +1248,7 @@ function scrollToName(searcher_name){
 				setListActiveAnchor(result);
 			}
 		}
-	}else{ //since searcher name is blank 
+	}else{ //since searcher name is blank
 		//scrollListToIndex(a_array, 0);//scroll to the item
 		//setListActiveItem(a_array, 0);//highlight the item
 	}
@@ -1263,7 +1263,7 @@ function scrollToAnchor(anchor_id){
 }
 
 function getY(element){
-	
+
 	var y = 0;
 	for( var e = element; e; e = e.offsetParent)//iterate the offset Parents
 	{
@@ -1275,7 +1275,7 @@ function getY(element){
 }
 
 //function setListActiveItem(item_array, active_index){
-//	
+//
 //	item_array[getCurrentIndex()].className = "";
 //	setCurrentIndex(active_index);
 //	item_array[getCurrentIndex()].className = "activeA"; //setting the active class name
@@ -1287,7 +1287,7 @@ function setListActiveAnchor(active_anchor){
 	}
 	setCurrentAnchor(active_anchor);
 	$(getCurrentAnchor()).className = "activeA";
-	
+
 }
 
 //handles the scrolling of the list and setting of the current index
@@ -1336,7 +1336,7 @@ function changeLoadingStatus(status){
 //************* Misc functions (mostly from the old rdocs) ***********************
 //snagged code from the old templating system
 function toggleSource( id ){
-	
+
          var elem
          var link
 
@@ -1367,7 +1367,7 @@ function toggleSource( id ){
 
 function openCode( url ){
      window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
-}	
+}
 
 //this function handles the ajax calling and afterits loaded the jumping to the anchor...
 function jsHref(url){
@@ -1381,12 +1381,12 @@ function jsHref(url){
 
 //function comparePatterns(string, regexp){
 //	var direction = 0;
-//	
-//	
+//
+//
 //	return (direction)
 //}
 
-////returns the index of the element 
+////returns the index of the element
 //function binSearcher(regexp_pattern, list, start_index, stop_index){
 //	//divide the list in half
 //	var split_point = 0;
@@ -1399,10 +1399,10 @@ function jsHref(url){
 //			return (binSearcher(regexp_pattern, list, split_point, stop_index));
 //		else
 //			return(split_point);
-//	
+//
 //}
 
-var QSAddition = {	
+var QSAddition = {
 	buildCache: function() {
 	  if (window.console && window.console.log) { console.log('building cache'); }
 	  QSAddition.rows = $A([]);
@@ -1412,26 +1412,26 @@ var QSAddition = {
 			QSAddition.cache.push(element.innerHTML.toLowerCase());
 		});
 	},
-	
+
 	searchCache: function(term) {
 		var term = term.toLowerCase();
 		var len = QSAddition.cache.length;
 		var scores = $A([]);
-		
+
 		for(var i=0; i < len; i++) {
 			var score = QSAddition.cache[i].score(term);
 			if (score > 0) { scores.push([score, i]); }
 		}
-		
+
 		sorted = scores.sort(function(a,b) { return b[0] - a[0]; })
 		return sorted.length > 0 ? QSAddition.rows[sorted[0][1]] : null;
 	}
 }
 
 // qs_score - Quicksilver Score
-// 
+//
 // A port of the Quicksilver string ranking algorithm
-// 
+//
 // "hello world".score("axl") //=> 0.0
 // "hello world".score("ow") //=> 0.6
 // "hello world".score("hello world") //=> 1.0
@@ -1443,19 +1443,19 @@ var QSAddition = {
 // http://blacktree-alchemy.googlecode.com/svn/trunk/Crucible/Code/NSString+BLTRRanking.m
 //
 // The MIT License
-// 
+//
 // Copyright (c) 2008 Lachie Cox
-// 
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -1467,7 +1467,7 @@ var QSAddition = {
 
 String.prototype.score = function(abbreviation,offset) {
   offset = offset || 0 // TODO: I think this is unused... remove
- 
+
   if(abbreviation.length == 0) return 0.9
   if(abbreviation.length > this.length) return 0.0
 
@@ -1486,9 +1486,9 @@ String.prototype.score = function(abbreviation,offset) {
       next_abbreviation = ''
     else
       next_abbreviation = abbreviation.substring(i)
- 
+
     var remaining_score   = next_string.score(next_abbreviation,offset+index)
- 
+
     if (remaining_score > 0) {
       var score = this.length-next_string.length;
 
@@ -1503,7 +1503,7 @@ String.prototype.score = function(abbreviation,offset) {
           }
 
           // XXX maybe not port this heuristic
-          // 
+          //
           //          } else if ([[NSCharacterSet uppercaseLetterCharacterSet] characterIsMember:[self characterAtIndex:matchedRange.location]]) {
           //            for (j = matchedRange.location-1; j >= (int) searchRange.location; j--) {
           //              if ([[NSCharacterSet uppercaseLetterCharacterSet] characterIsMember:[self characterAtIndex:j]])
@@ -1515,7 +1515,7 @@ String.prototype.score = function(abbreviation,offset) {
           score -= index
         }
       }
-   
+
       score += remaining_score * next_string.length
       score /= this.length;
       return score

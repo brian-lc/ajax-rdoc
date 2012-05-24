@@ -7,7 +7,7 @@ This template creates a javascript enhanced rdoc (similar to what is on http://w
 1) Get the files (pick your flavor)
 		* tarball: http://github.com/breakpointer/ajax-rdoc/tarball/master)
 		* git: git clone git://github.com/breakpointer/ajax-rdoc.git
-		
+
 2) cd into the new ajax-rdoc directory
 
 3) Install the generator and templates into your version of rdoc
